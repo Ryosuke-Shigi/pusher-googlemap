@@ -23,7 +23,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    background-color:rgb(235, 82, 82);
+    background-color:rgb(255, 147, 147);
 }
 
 .container_A .mapSector{
@@ -87,7 +87,7 @@
     background-color: rgba(255, 255, 255, 0.438);
 }
 
-.container_B .nextButtonA{
+.container_B .sendButtonA{
     height:75%;
     width:15%;
     border-radius:10px;
@@ -103,13 +103,13 @@
     transition: all 0.2s ease;
     cursor:pointer;
 }
-.container_B .nextButtonA:hover{
+.container_B .sendButtonA:hover{
     color:rgba(255, 57, 149, 0.582);
     background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
     box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
 
 }
-.container_B .nextButtonA:active{
+.container_B .sendButtonA:active{
     color:rgba(255, 57, 57, 0.719);
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
@@ -153,7 +153,6 @@
     :root{
         --root-font-size:5vw;
     }
-
     .wrapper .container_A{
         height:100vh;
         width: 65%;;
@@ -162,10 +161,14 @@
         height:100vh;
         width:35%;
     }
-    .container_B .text{
+    .container_B .comment{
+        height:8%;
         font-size:2vw;
     }
-
+    .container_B .text{
+        font-size:2vw;
+        padding-left: 2%;
+    }
     .mapButtonContainer .buttonA{
         height:70%;
         font-size: 3vw;

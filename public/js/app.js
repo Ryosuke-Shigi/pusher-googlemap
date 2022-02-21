@@ -55957,6 +55957,9 @@ window.Echo.channel('check').listen('checked', function (e) {
   document.getElementById('zoom').value = e.zoom;
   document.getElementById('latitude').click();
 });
+window.Echo.channel('comment').listen('commented', function (e) {
+  $("#commentSector").append('<div class="comment">' + e.comment + '</div>');
+});
 
 /***/ }),
 
@@ -56101,6 +56104,16 @@ $(function () {
         latitude: $('#latitude').val(),
         longitude: $('#longitude').val(),
         zoom: $('#zoom').val()
+      },
+      method: "POST"
+    });
+  });
+  $('#sendButtonA').click(function () {
+    var url = "/check/commenter";
+    $.ajax({
+      url: url,
+      data: {
+        comment: $('#comment').val()
       },
       method: "POST"
     });

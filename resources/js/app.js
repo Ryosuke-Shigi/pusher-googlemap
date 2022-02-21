@@ -39,3 +39,7 @@ window.Echo.channel('check').listen('checked',(e)=>{
     document.getElementById('latitude').click();
 
 });
+
+window.Echo.channel('comment').listen('commented',(e)=>{
+    $("#commentSector").append('<div class="comment">'+e.comment+'</div>');
+});

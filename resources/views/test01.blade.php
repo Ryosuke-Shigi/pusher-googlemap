@@ -29,28 +29,11 @@
             </div>
         </div>
         <div class="container_B">
-            <div class="commentSector">
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
-                <div class="comment">test</div>
-                <div class="comment">test2</div>
-                <div class="comment">test3</div>
+            <div class="commentSector" id="commentSector">
+                <!--ここにコメントがはいります-->
             </div>
-            <div class="messageSector">
-                <input type="text" class="text"></input> <div id="nextButtonA" class="nextButtonA">send</div>
+            <div class="messageSector" id="messageSector">
+                <input type="text" class="text" id="comment"></input> <div id="sendButtonA" class="sendButtonA">send</div>
             </div>
         </div>
     </dvi>

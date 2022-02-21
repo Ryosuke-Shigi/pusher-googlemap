@@ -32,6 +32,7 @@ Route::group(['prefix'=>'practice','as'=>'practice'],function(){
 Route::group(['prefix'=>'check','as'=>'check'],function(){
     Route::get('/viewer','checkController@viewer')->name('viewer');
     Route::post('/checker','checkController@checker')->name('checker');
+    Route::post('/commenter','checkController@commenter')->name('commenter');
 });
 
 Auth::routes();

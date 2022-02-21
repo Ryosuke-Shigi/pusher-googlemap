@@ -23,7 +23,16 @@ $(function(){
         });
     });
 
-
+    $('#sendButtonA').click(function(){
+        const url="/check/commenter";
+        $.ajax({
+            url:url,
+            data:{
+                comment:$('#comment').val(),
+            },
+            method:"POST"
+        });
+    });
 
 
 });

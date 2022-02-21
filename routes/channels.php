@@ -19,3 +19,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
 Broadcast::channel('check',function(){
     return true;//trueで全て
 });
+
+Broadcast::channel('comment',function(){
+    return true;
+});
