@@ -15,6 +15,7 @@ Broadcast::channel('App.User.{id}', function ($user, $id) {
     return (int) $user->id === (int) $id;
 });
 
+//ここでチャンネルに対しての制限をかける
 Broadcast::channel('check',function(){
-    return true;
+    return true;//trueで全て
 });

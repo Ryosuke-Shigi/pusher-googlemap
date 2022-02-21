@@ -41,76 +41,78 @@ function initMap(){
         // 地図のインスタンスを作成します。第一引数にはマップを描画する領域、第二引数にはオプションを指定
         // mapはgooglemap.blade.phpのdivのid
         mapObj = new google.maps.Map(document.getElementById("map"), opt);
-
+        //初期の拡大率
         mapObj.setZoom(Number(document.getElementById("zoom").value));
         //ボタン設置
-        const input = document.getElementById("mapButtonContainer");
+        const input = document.getElementById("mapButtonSector");
         //位置指定してマップにプッシュ
-        mapObj.controls[google.maps.ControlPosition.BOTTOM_CENTER].push(input);
+        mapObj.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
+        //latitudeをクリック（javascriptで叩いている)をクリックした時
+        //pusherで受信した時
         document.getElementById('latitude').addEventListener('click',function(){
-            /*         let position={lat:document.getElementById('latitude').value,
-                                  lng:document.getElementById('longitude').value};//連想配列 "lat"=>現在の緯度 "lng"=>現在の経度 latLng
-             */
-                    panto = new google.maps.LatLng(document.getElementById('latitude').value,document.getElementById('longitude').value);
+            //拡大率取得
+            panto = new google.maps.LatLng(document.getElementById('latitude').value,document.getElementById('longitude').value);
 
-                                  //マーカーが存在していたら
-                    if(activeMarker != null){
-                        //指定中マーカーを消す
-                        activeMarker.setMap();
-                    }
-                    //指定中マーカー作成
-                    activeMarker=new google.maps.Marker({
-                        position:panto,          //位置
-                        map:mapObj,                     //どの地図に入れるか
-                        title:"activate"       //マウスをホバーした時にでるタイトルDate(pos.timestamp)
+            //アクティブマーカーが存在していたら
+            if(activeMarker != null){
+                //指定中マーカーを消す
+                activeMarker.setMap();
+            }
+            //アクティブマーカー作成
+            activeMarker=new google.maps.Marker({
+                position:panto,          //位置
+                map:mapObj,                     //どの地図に入れるか
+                title:"activate"       //マウスをホバーした時にでるタイトルDate(pos.timestamp)
 
-                    });
-                    mapObj.setZoom(Number(document.getElementById('zoom').value));
-                    mapObj.panTo(panto);
-                });
-
-
-
-
-                    //シングルクリックでマーカー（どこを登録するか）作成
-                    google.maps.event.addListener(mapObj, 'click', function(pos)
-                    {
-                        //マーカーが存在していたら
-                        if(activeMarker != null){
-                            //指定中マーカーを消す
-                            activeMarker.setMap();
-                        }
-
-                        //現在日時取得
-                        let nowDate = new Date();
-
-                        //Bladeにチェックした位置を保存
-                        document.getElementById('latitude').value = pos.latLng.lat();
-                        document.getElementById('longitude').value = pos.latLng.lng();
-                        //document.getElementById('nowTime').value = nowDate.getTime();
-                        document.getElementById('zoom').value=mapObj.getZoom();
-                        //中心へ移動
-                        //mapObj.panTo(e.latLng);
-
-                        //指定中マーカー作成
-                        activeMarker=new google.maps.Marker({
-                            position:pos.latLng,          //位置
-                            map:mapObj,                     //どの地図に入れるか
-                            title:"経度："+pos.latLng.lat()+" 緯度："+pos.latLng.lng()+" チェック時間："+nowDate.getTime()         //マウスをホバーした時にでるタイトルDate(pos.timestamp)
-
-                        });
-
-                    });
+            });
+            //拡大率反映
+            mapObj.setZoom(Number(document.getElementById('zoom').value));
+            //表示領域の中心を、アクティブマーカーの位置に移動
+            mapObj.panTo(panto);
+        });
 
 
 
-                    //ダブルクリック　登録表示
-                    google.maps.event.addListener(mapObj,'dblclick',function(e)
-                    {
-                        document.getElementById('latitude').click();
-                        document.getElementById('mapButtonA').click();
-                    });
+
+        //シングルクリックでマーカー（どこを登録するか）作成
+        google.maps.event.addListener(mapObj, 'click', function(pos)
+        {
+            //マーカーが存在していたら
+            if(activeMarker != null){
+                //指定中マーカーを消す
+                activeMarker.setMap();
+            }
+
+            //現在日時取得
+            let nowDate = new Date();
+
+            //Bladeにチェックした位置を保存
+            document.getElementById('latitude').value = pos.latLng.lat();
+            document.getElementById('longitude').value = pos.latLng.lng();
+            //document.getElementById('nowTime').value = nowDate.getTime();
+            document.getElementById('zoom').value=mapObj.getZoom();
+            //中心へ移動
+            //mapObj.panTo(e.latLng);
+
+            //指定中マーカー作成
+            activeMarker=new google.maps.Marker({
+                position:pos.latLng,          //位置
+                map:mapObj,                     //どの地図に入れるか
+                title:"経度："+pos.latLng.lat()+" 緯度："+pos.latLng.lng()+" チェック時間："+nowDate.getTime()         //マウスをホバーした時にでるタイトルDate(pos.timestamp)
+
+            });
+
+        });
+
+
+
+/*         //ダブルクリック　登録表示
+        google.maps.event.addListener(mapObj,'dblclick',function(e)
+        {
+            document.getElementById('latitude').click();
+            document.getElementById('mapButtonA').click();
+        }); */
 
 
         //////////////////////////////////////////////////////////////////

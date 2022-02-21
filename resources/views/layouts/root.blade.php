@@ -7,6 +7,7 @@
         @yield("meta")
     </head>
     <body>
+        <div id='app'></div>
         @yield("contents")
     </body>
 </html>
