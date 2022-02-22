@@ -23,7 +23,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    background-color:rgb(255, 147, 147);
+    background-color:rgb(255, 184, 184);
 }
 
 .container_A .mapSector{
@@ -65,7 +65,7 @@
     align-items: center;
     font-size:2vh;
     border-radius: 5px;
-    background-color:rgba(148, 255, 255, 0.575);
+    background-color:rgba(166, 253, 253, 0.459);
 }
 
 .container_B .messageSector{

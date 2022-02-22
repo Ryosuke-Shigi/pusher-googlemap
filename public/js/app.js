@@ -55952,13 +55952,18 @@ var app = new Vue({
   el: '#app'
 });
 window.Echo.channel('check').listen('checked', function (e) {
-  document.getElementById('latitude').value = e.latitude;
-  document.getElementById('longitude').value = e.longitude;
-  document.getElementById('zoom').value = e.zoom;
-  document.getElementById('latitude').click();
+  /*     document.getElementById('latitude').value = e.latitude;
+      document.getElementById('longitude').value = e.longitude;
+      document.getElementById('zoom').value = e.zoom;
+      document.getElementById('latitude').click(); */
+  $("#latitude").val(e.latitude);
+  $("#longitude").val(e.longitude);
+  $("#zoom").val(e.zoom);
+  $("#latitude").trigger('click');
 });
 window.Echo.channel('comment').listen('commented', function (e) {
   $("#commentSector").append('<div class="comment">' + e.comment + '</div>');
+  $("#comment").val("");
 });
 
 /***/ }),
@@ -56109,14 +56114,16 @@ $(function () {
     });
   });
   $('#sendButtonA').click(function () {
-    var url = "/check/commenter";
-    $.ajax({
-      url: url,
-      data: {
-        comment: $('#comment').val()
-      },
-      method: "POST"
-    });
+    if ($('#comment').val() != "") {
+      var url = "/check/commenter";
+      $.ajax({
+        url: url,
+        data: {
+          comment: $('#comment').val()
+        },
+        method: "POST"
+      });
+    }
   });
 });
 
