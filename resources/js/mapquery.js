@@ -33,7 +33,13 @@ $(function(){
                 },
                 method:"POST"
             });
+            $('#comment').val("");
         }
+    });
+
+    //コメント入力画面 ENTERで更新
+    $('#comment').change(function(e){
+        $('#sendButtonA').trigger('click');
     });
 
 

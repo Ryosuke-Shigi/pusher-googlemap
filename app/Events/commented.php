@@ -22,7 +22,7 @@ class commented  implements ShouldBroadcast
      */
     public function __construct($comment)
     {
-        //
+        //ここにテーブル保存とかいれればログを残せる
         $this->comment=$comment;
     }
 

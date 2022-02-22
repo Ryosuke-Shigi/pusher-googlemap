@@ -45,5 +45,7 @@ window.Echo.channel('check').listen('checked',(e)=>{
 
 window.Echo.channel('comment').listen('commented',(e)=>{
     $("#commentSector").append('<div class="comment">'+e.comment+'</div>');
-    $("#comment").val("");
+    let bar = document.getElementById('commentSector');
+    bar.scrollTo(0,bar.scrollHeight);
+
 });

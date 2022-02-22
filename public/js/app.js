@@ -55963,7 +55963,8 @@ window.Echo.channel('check').listen('checked', function (e) {
 });
 window.Echo.channel('comment').listen('commented', function (e) {
   $("#commentSector").append('<div class="comment">' + e.comment + '</div>');
-  $("#comment").val("");
+  var bar = document.getElementById('commentSector');
+  bar.scrollTo(0, bar.scrollHeight);
 });
 
 /***/ }),
@@ -56123,7 +56124,11 @@ $(function () {
         },
         method: "POST"
       });
+      $('#comment').val("");
     }
+  });
+  $('#comment').change(function (e) {
+    $('#sendButtonA').trigger('click');
   });
 });
 
