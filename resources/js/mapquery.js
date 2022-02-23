@@ -24,6 +24,7 @@ $(function(){
     });
 
     $('#sendButtonA').click(function(){
+        alert('test');
         if($('#comment').val()!=""){
             const url="/check/commenter";
             $.ajax({
