@@ -56103,7 +56103,7 @@ $(document).ready(function () {
 });
 $(function () {
   $('#mapButtonA').click(function () {
-    var url = "host.docker.internal:8085/check/checker";
+    var url = "/check/checker";
     $.ajax({
       url: url,
       data: {
@@ -56116,7 +56116,7 @@ $(function () {
   });
   $('#sendButtonA').click(function () {
     if ($('#comment').val() != "") {
-      var url = "host.docker.internal:8085/check/commenter";
+      var url = "/check/commenter";
       $.ajax({
         url: url,
         data: {
