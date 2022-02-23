@@ -5,7 +5,7 @@
 }
 
 .wrapper .container_A{
-    height:55vh;
+    height:54vh;
     width:100%;
     display: flex;
     justify-content: center;
@@ -55,8 +55,8 @@
     background-color: rgba(255, 255, 255, 0.431);
 }
 .container_B .comment{
-    height:10%;
-    width:95%;
+    height:auto;
+    width:98%;
     display: flex;
     margin-top:1%;
     padding-left: 2%;
@@ -70,7 +70,7 @@
 
 .container_B .messageSector{
     height:10%;
-    width:97%;
+    width:98%;
     display: flex;
     align-items: center;
     justify-content:space-around;
@@ -143,13 +143,28 @@
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
 }
+.mapButtonSector .searchBox{
+    height:60%;
+    width:70%;
+    text-align: center;
+    font-size:2.2vh;
+    font-weight: 800;
+    color:#0c00b8;
+    margin-left:2%;
+    border-style: none;
+    background-color:rgba(255, 50, 176, 0.397);
+}
+.mapButtonSector .searchBox::placeholder{
+    color:rgba(255, 0, 0, 0.767);
+    font-weight:800;
+}
 
 
 
 
 
 /*横長*/
-@media (orientation: landscape){
+/* @media (orientation: landscape){
     :root{
         --root-font-size:5vw;
     }
@@ -173,6 +188,8 @@
         height:70%;
         font-size: 3vw;
     }
+    .mapButtonSector .searchBox{
+        font-size:2.2vw;
+    }
 
-
-}
+} */

@@ -11,7 +11,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/maps.js') }} " defer></script>
-    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBMKajpItMT-Hy-YgCTAvSO13Eefz2OVnY&callback=initMap" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBMKajpItMT-Hy-YgCTAvSO13Eefz2OVnY&libraries=places&callback=initMap" defer></script>
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test01.css') }}" rel="stylesheet">
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
@@ -24,8 +24,10 @@
     <div class="wrapper">
         <div class="container_A">
             <div class="mapSector" id="map"></div>
+
             <div id="mapButtonSector" class="mapButtonSector">
                 <div id="mapButtonA" class="buttonA">共有</div>
+                <input type="text" class="searchBox" id="searchBox" placeholder="検    索">
             </div>
         </div>
         <div class="container_B">

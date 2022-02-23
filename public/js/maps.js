@@ -48,6 +48,34 @@ function initMap(){
         //位置指定してマップにプッシュ
         mapObj.controls[google.maps.ControlPosition.TOP_CENTER].push(input);
 
+
+
+        //検索用の窓のID取得
+        const searchBox = new google.maps.places.SearchBox(document.getElementById('searchBox'));
+        //検索窓設定
+        //境界取得
+        mapObj.addListener('bounds_charged',()=>{
+            searchBox.setBounds(mapObj.getBounds());
+        });
+        //サーチボックスに変化があった時
+        searchBox.addListener("places_changed", () => {
+            const places = searchBox.getPlaces();
+            if (places.length == 0) {
+                return;
+            }
+            const bounds = new google.maps.LatLngBounds();
+            places.forEach((place) => {
+                if (place.geometry.viewport) {
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+            });
+            mapObj.fitBounds(bounds);
+            document.getElementById('searchBox').value="";
+        });
+
+
         //latitudeをクリック（javascriptで叩いている)をクリックした時
         //pusherで受信した時
         document.getElementById('latitude').addEventListener('click',function(){
