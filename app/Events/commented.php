@@ -10,16 +10,19 @@ use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
+//ShouldBroadcast ブロードキャスト継承
 class commented  implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
+    //メッセージ保管
     public $comment;
     /**
      * Create a new event instance.
      *
      * @return void
      */
+    //コンストラクタ
     public function __construct($comment)
     {
         //ここにテーブル保存とかいれればログを残せる
