@@ -28,7 +28,7 @@ class checkController extends Controller
     //コメント投稿
     public function commenter(REQUEST $request){
         event(new commented($request->comment));
-        return response()->jeson(['message'=>'comment']);
+        return response()->jeson(['message'=>'コメント']);
     }
 
 }
