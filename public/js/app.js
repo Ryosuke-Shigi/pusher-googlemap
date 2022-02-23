@@ -56103,7 +56103,7 @@ $(document).ready(function () {
 });
 $(function () {
   $('#mapButtonA').click(function () {
-    var url = "/check/checker";
+    var url = "host.docker.internal:8085/check/checker";
     $.ajax({
       url: url,
       data: {
@@ -56116,7 +56116,7 @@ $(function () {
   });
   $('#sendButtonA').click(function () {
     if ($('#comment').val() != "") {
-      var url = "/check/commenter";
+      var url = "host.docker.internal:8085/check/commenter";
       $.ajax({
         url: url,
         data: {
@@ -56126,7 +56126,8 @@ $(function () {
       });
       $('#comment').val("");
     }
-  });
+  }); //コメント入力画面 ENTERで更新
+
   $('#comment').change(function (e) {
     $('#sendButtonA').trigger('click');
   });
