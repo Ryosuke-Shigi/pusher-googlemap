@@ -11,7 +11,7 @@ $(function(){
 
 
     $('#mapButtonA').click(function(){
-        const url="/check/checker";
+        const url="https://map-talk.herokuapp.com/check/checker";
         $.ajax({
             url:url,
             data:{
@@ -24,9 +24,8 @@ $(function(){
     });
 
     $('#sendButtonA').click(function(){
-        alert('test');
         if($('#comment').val()!=""){
-            const url="/check/commenter";
+            const url="https://map-talk.herokuapp.com/check/commenter";
             $.ajax({
                 url:url,
                 data:{
