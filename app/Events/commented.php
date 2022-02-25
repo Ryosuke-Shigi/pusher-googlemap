@@ -9,13 +9,16 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
-
+use Illuminate\Support\Facades\DB;
+use App\Models\comment;
 //ShouldBroadcast ブロードキャスト継承
 class commented  implements ShouldBroadcast
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
     //メッセージ保管
+    public $roomName;
+    public $name;
     public $comment;
     /**
      * Create a new event instance.
@@ -23,10 +26,25 @@ class commented  implements ShouldBroadcast
      * @return void
      */
     //コンストラクタ
-    public function __construct($comment)
+    public function __construct($roomName,$name,$comment)
     {
         //ここにテーブル保存とかいれればログを残せる
+        $this->roomName=$roomName;
+        $this->name=$name;
         $this->comment=$comment;
+
+        DB::beginTransaction();
+        try{
+            $table = new comment;
+            $table->roomName = $roomName;
+            $table->name = $name;
+            $table->comment = $comment;
+            $table->save();
+            DB::commit();
+        }catch(Exception $exception){
+            DB::rollBack();
+            throw $exception;
+        }
     }
 
     /**

@@ -15,6 +15,7 @@ $(function(){
         $.ajax({
             url:url,
             data:{
+                roomName:$('#roomName').val(),
                 latitude:$('#latitude').val(),
                 longitude:$('#longitude').val(),
                 zoom:$('#zoom').val()
@@ -29,6 +30,8 @@ $(function(){
             $.ajax({
                 url:url,
                 data:{
+                    roomName:$('#roomName').val(),
+                    name:$('#name').val(),
                     comment:$('#comment').val(),
                 },
                 method:"POST"

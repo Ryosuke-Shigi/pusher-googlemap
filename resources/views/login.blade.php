@@ -23,6 +23,7 @@
             </div>
             <div class="topSection">
                 <div class="naviSector">
+                    {{ "ルーム：".$roomName }}
                 </div>
                 <div class="mainSector">
                     <form method="GET" id="nextActionA" action="{{ route('check.viewer') }}" enctype="multipart/form-data">
@@ -30,7 +31,7 @@
                         <div class="infoContentA">
                             <div class="nameSpace">名　前</div>
                             <div class="inputSpace">
-                                <input type="text" class="text" name="roomName">
+                                <input type="text" class="text" name="name">
                             </div>
                         </div>
                         <div class="infoContentA">
@@ -39,11 +40,11 @@
                                 <input type="text" class="text" name="pass">
                             </div>
                         </div>
-                        <input type="hidden" name="roomName" id="roomName">
+                        <input type="hidden" name="roomName" id="roomName" value={{ $roomName }}>
                     </form>
                 </div>
                 <div class="buttonSector">
-                    <div class="nextButtonA">登 録</div>
+                    <div class="nextButtonA">入 る</div>
                     <div class="backButtonA">戻 る</div>
                 </div>
             </div>

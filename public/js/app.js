@@ -55956,15 +55956,19 @@ window.Echo.channel('check').listen('checked', function (e) {
       document.getElementById('longitude').value = e.longitude;
       document.getElementById('zoom').value = e.zoom;
       document.getElementById('latitude').click(); */
-  $("#latitude").val(e.latitude);
-  $("#longitude").val(e.longitude);
-  $("#zoom").val(e.zoom);
-  $("#latitude").trigger('click');
+  if ($("#roomName").val() == e.roomName) {
+    $("#latitude").val(e.latitude);
+    $("#longitude").val(e.longitude);
+    $("#zoom").val(e.zoom);
+    $("#latitude").trigger('click');
+  }
 });
 window.Echo.channel('comment').listen('commented', function (e) {
-  $("#commentSector").append('<div class="comment">' + e.comment + '</div>');
-  var bar = document.getElementById('commentSector');
-  bar.scrollTo(0, bar.scrollHeight);
+  if ($("#roomName").val() == e.roomName) {
+    $("#commentSector").append('<div class="comment">' + e.name + " " + e.comment + '</div>');
+    var bar = document.getElementById('commentSector');
+    bar.scrollTo(0, bar.scrollHeight);
+  }
 });
 
 /***/ }),
@@ -56107,6 +56111,7 @@ $(function () {
     $.ajax({
       url: url,
       data: {
+        roomName: $('#roomName').val(),
         latitude: $('#latitude').val(),
         longitude: $('#longitude').val(),
         zoom: $('#zoom').val()
@@ -56120,6 +56125,8 @@ $(function () {
       $.ajax({
         url: url,
         data: {
+          roomName: $('#roomName').val(),
+          name: $('#name').val(),
           comment: $('#comment').val()
         },
         method: "POST"

@@ -31,12 +31,17 @@
         <div class="container_B">
             <div class="commentSector" id="commentSector">
                 <!--ここにコメントがはいります-->
+                @foreach ($table as $key => $data )
+                    <div class="comment">{{ $data->name.":".$data->comment }}</div>
+                @endforeach
             </div>
             <div class="messageSector" id="messageSector">
                 <input type="text" class="text" id="comment"></input> <div id="sendButtonA" class="sendButtonA">send</div>
             </div>
         </div>
     </dvi>
+    <input type="hidden" id="roomName" value={{ $roomName }}>
+    <input type="hidden" id="name" value={{ $name }}>
     <input type="hidden" id="latitude">
     <input type="hidden" id="longitude">
     <input type="hidden" id="zoom">

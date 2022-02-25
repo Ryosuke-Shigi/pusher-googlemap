@@ -36,7 +36,7 @@ function initMap(){
             mapTypeControl: false,              //地図・航空地図切り替えをなくす
             fullscreenControl: false,           //全体画面表示ボタンキャンセル
             streetViewControl: false,            //ストリートビューボタンキャンセル
-            gestureHandling: "greedy"
+            gestureHandling: "greedy"           //指一本で移動できる
         };
 
         // 地図のインスタンスを作成します。第一引数にはマップを描画する領域、第二引数にはオプションを指定

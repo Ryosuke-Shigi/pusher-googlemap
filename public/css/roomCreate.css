@@ -32,7 +32,7 @@ form{
     align-content: center;
     flex-wrap: wrap;
     border-radius:10px;
-    background-color: rgba(121, 156, 255, 0.52);
+    background-color: rgba(255, 255, 255, 0.24);
 }
 .container_A .topSection{
     height:80%;
@@ -46,6 +46,7 @@ form{
     background-color: rgba(255, 255, 255, 0.329);
 }
 .topSection .naviSector{
+    font-size:2vh;
     height:10%;
     width:95%;
     display:flex;
@@ -337,6 +338,9 @@ form{
     }
     .mainSector .infoContentA{
         max-width:none;
+    }
+    .topSection .naviSector{
+        font-size:2vw;
     }
     .infoContentA .nameSpace{
         font-size:3vw;

@@ -8,26 +8,40 @@ use App\Events\commented;
 use App\Models\Check;
 use illuminate\Http\JsonResponse;
 use illuminate\View\View;
+use Illuminate\Support\Facades\DB;
+use App\Models\comment;
 
 class checkController extends Controller
 {
     //マップ表示
+    //name pass roomNameが送られてくる
     public function viewer(REQUEST $request){
         //チェックデータを全て抽出
         //$table=Check::all();
         //return view('test01',['table'=>$table]);
-        return view('test01');
+        $pass=DB::table('rooms')
+                ->where('roomName','=',$request->roomName)
+                ->first();
+        //パスワードが正しいか判断
+        if($pass->pass != $request->pass){
+            return redirect()->route('route.viewRooms');
+        }else{
+            $table=DB::table('comments')
+            ->where('roomName','=',$request->roomName)
+            ->get();
+        }
+        return view('test01',['table'=>$table,'roomName'=>$request->roomName,'name'=>$request->name]);
     }
 
-    //イベント作成
+    //MAPイベント
     public function checker(REQUEST $request){
-        event(new checked($request->latitude,$request->longitude,$request->zoom));
+        event(new checked($request->roomName,$request->latitude,$request->longitude,$request->zoom));
         return response()->json(['message'=>'チェック']);
     }
 
     //コメント投稿
     public function commenter(REQUEST $request){
-        event(new commented($request->comment));
+        event(new commented($request->roomName,$request->name,$request->comment));
         return response()->json(['message'=>'コメント']);
     }
 

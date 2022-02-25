@@ -37,15 +37,18 @@ window.Echo.channel('check').listen('checked',(e)=>{
     document.getElementById('longitude').value = e.longitude;
     document.getElementById('zoom').value = e.zoom;
     document.getElementById('latitude').click(); */
-    $("#latitude").val(e.latitude);
-    $("#longitude").val(e.longitude);
-    $("#zoom").val(e.zoom);
-    $("#latitude").trigger('click');
+    if($("#roomName").val()==e.roomName){
+        $("#latitude").val(e.latitude);
+        $("#longitude").val(e.longitude);
+        $("#zoom").val(e.zoom);
+        $("#latitude").trigger('click');
+    }
 });
 
 window.Echo.channel('comment').listen('commented',(e)=>{
-    $("#commentSector").append('<div class="comment">'+e.comment+'</div>');
-    let bar = document.getElementById('commentSector');
-    bar.scrollTo(0,bar.scrollHeight);
-
+    if($("#roomName").val()==e.roomName){
+        $("#commentSector").append('<div class="comment">'+e.name+" "+e.comment+'</div>');
+        let bar = document.getElementById('commentSector');
+        bar.scrollTo(0,bar.scrollHeight);
+    }
 });

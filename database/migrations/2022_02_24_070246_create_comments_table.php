@@ -15,11 +15,10 @@ class CreateCommentsTable extends Migration
     {
         Schema::create('comments', function (Blueprint $table) {
             $table->Increments('id');
-            $table->string('roomName',191)->unique();
+            $table->string('roomName',191);
             $table->string('name',191);
             $table->string('comment',191);
             $table->timestamps();
-
             $table->foreign('roomName')->references('roomName')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
         });
     }

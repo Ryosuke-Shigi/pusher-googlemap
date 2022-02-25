@@ -14,6 +14,7 @@ use Illuminate\Queue\SerializesModels;
 
 class checked implements ShouldBroadcast
 {
+    public $roomName;
     public $latitude;
     public $longitude;
     public $zoom;
@@ -24,9 +25,10 @@ class checked implements ShouldBroadcast
      *
      * @return void
      */
-    public function __construct($latitude,$longitude,$zoom)
+    public function __construct($roomName,$latitude,$longitude,$zoom)
     {
         //
+        $this->roomName=$roomName;
         $this->latitude=$latitude;
         $this->longitude=$longitude;
         $this->zoom=$zoom;

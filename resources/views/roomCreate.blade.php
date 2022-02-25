@@ -19,13 +19,14 @@
 @section('contents')
     <div class="wrapper">
         <div class="container_A">
-            <div class="titleSection">
-            </div>
+{{--             <div class="titleSection">
+            </div> --}}
             <div class="topSection">
                 <div class="naviSector">
+                    ルーム作成
                 </div>
                 <div class="mainSector">
-                    <form method="GET" id="nextActionA" action="{{ route('check.viewer') }}" enctype="multipart/form-data">
+                    <form method="GET" id="nextActionA" action="{{ route('create.room') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="infoContentA">
                             <div class="nameSpace">ルーム名</div>
@@ -39,7 +40,6 @@
                                 <input type="text" class="text" name="pass">
                             </div>
                         </div>
-                        <input type="hidden" name="roomName" id="roomName">
                     </form>
                 </div>
                 <div class="buttonSector">
