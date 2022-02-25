@@ -56135,6 +56135,67 @@ $(function () {
 
 /***/ }),
 
+/***/ "./resources/js/routes.js":
+/*!********************************!*\
+  !*** ./resources/js/routes.js ***!
+  \********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* $(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+});
+ */
+$(function () {
+  $('.chatRoom').click(function () {
+    $('#roomName').val($(this).data('room_name'));
+    $('#nextActionA').submit();
+  });
+  $('.nextButtonA').click(function () {
+    $('#nextActionA').submit();
+  });
+  $('.backButtonA').click(function () {
+    $('#backActionA').submit();
+  });
+  /*     $('#mapButtonA').click(function(){
+          const url="/check/checker";
+          $.ajax({
+              url:url,
+              data:{
+                  latitude:$('#latitude').val(),
+                  longitude:$('#longitude').val(),
+                  zoom:$('#zoom').val()
+              },
+              method:"POST"
+          });
+      });
+  
+      $('#sendButtonA').click(function(){
+          if($('#comment').val()!=""){
+              const url="/check/commenter";
+              $.ajax({
+                  url:url,
+                  data:{
+                      comment:$('#comment').val(),
+                  },
+                  method:"POST"
+              });
+              $('#comment').val("");
+          }
+      });
+  
+      //コメント入力画面 ENTERで更新
+      $('#comment').change(function(e){
+          $('#sendButtonA').trigger('click');
+      }); */
+});
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -56147,14 +56208,15 @@ $(function () {
 /***/ }),
 
 /***/ 0:
-/*!*************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/js/mapquery ./resources/sass/app.scss ***!
-  \*************************************************************************************/
+/*!*****************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/js/mapquery.js ./resources/js/routes.js ./resources/sass/app.scss ***!
+  \*****************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /work/laravel/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /work/laravel/resources/js/mapquery */"./resources/js/mapquery.js");
+__webpack_require__(/*! /work/laravel/resources/js/mapquery.js */"./resources/js/mapquery.js");
+__webpack_require__(/*! /work/laravel/resources/js/routes.js */"./resources/js/routes.js");
 module.exports = __webpack_require__(/*! /work/laravel/resources/sass/app.scss */"./resources/sass/app.scss");
 
 

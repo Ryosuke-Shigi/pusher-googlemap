@@ -35,7 +35,8 @@ function initMap(){
             disableDoubleClickZoom: true,       //ダブルクリックによるズームをさせない falseで可能になる
             mapTypeControl: false,              //地図・航空地図切り替えをなくす
             fullscreenControl: false,           //全体画面表示ボタンキャンセル
-            streetViewControl: false            //ストリートビューボタンキャンセル
+            streetViewControl: false,            //ストリートビューボタンキャンセル
+            gestureHandling: "greedy"
         };
 
         // 地図のインスタンスを作成します。第一引数にはマップを描画する領域、第二引数にはオプションを指定

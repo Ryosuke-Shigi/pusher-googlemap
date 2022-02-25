@@ -12,7 +12,7 @@ use illuminate\View\View;
 class checkController extends Controller
 {
     //マップ表示
-    public function viewer(){
+    public function viewer(REQUEST $request){
         //チェックデータを全て抽出
         //$table=Check::all();
         //return view('test01',['table'=>$table]);

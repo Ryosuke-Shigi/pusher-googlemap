@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComentsTable extends Migration
+class CreateCommentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,14 +14,13 @@ class CreateComentsTable extends Migration
     public function up()
     {
         Schema::create('comments', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            //ルートのコード
-            $table->string('route_code',191)->nullable(false);
-            //コメント
+            $table->Increments('id');
+            $table->string('roomName',191)->unique();
+            $table->string('name',191);
             $table->string('comment',191);
             $table->timestamps();
 
-
+            $table->foreign('roomName')->references('roomName')->on('rooms')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 
@@ -32,6 +31,6 @@ class CreateComentsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('coments');
+        Schema::dropIfExists('comments');
     }
 }

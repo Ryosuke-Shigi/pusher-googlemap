@@ -14,8 +14,6 @@
     <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBMKajpItMT-Hy-YgCTAvSO13Eefz2OVnY&libraries=places&callback=initMap" defer></script>
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test01.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/root.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/test01.css') }}" rel="stylesheet">
 
 @endsection
 

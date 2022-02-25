@@ -1,0 +1,274 @@
+@charset "UTF-8";
+
+:root{
+    --root-font-size:5vh;
+}
+
+.wrapper .container_A{
+    height:100vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background: linear-gradient(180deg, rgb(255, 255, 140) 0%, rgba(255,255,140) 70%, rgb(255, 174, 198) 100%);
+}
+
+.container_A .titleSection{
+    height:10%;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius:10px;
+    background-color: rgba(121, 156, 255, 0.52);
+}
+.container_A .topSection{
+    height:80%;
+    width:80%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    border-radius:10px;
+    background-color: rgba(255, 255, 255, 0.329);
+}
+.topSection .naviSector{
+    height:10%;
+    width:95%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(81, 255, 162, 0.555);
+    border-radius:10px;
+}
+.topSection .roomsSector{
+    height:85%;
+    width:95%;
+    display:flex;
+    justify-content: space-around;
+
+    flex-wrap: wrap;
+    background-color: rgba(81, 255, 162, 0.329);
+    border-radius:10px;
+    overflow-x:hidden;
+    overflow-y:scroll;
+}
+.roomsSector .chatRoom{
+    height:40%;
+    width:21%;
+    margin-top:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align:center;
+    flex-wrap: wrap;
+    background-color: rgba(81, 255, 162, 0.329);
+    border-radius:10px;
+    overflow:hidden;
+    transition:all 0.2s 0s ease;
+    cursor:pointer;
+
+}
+.roomsSector .chatRoom:hover{
+    background-color: rgba(81, 255, 96, 0.76);
+}
+.roomsSector .chatRoom:active{
+    background-color: rgba(255, 243, 81, 0.616);
+}
+
+
+
+
+
+
+
+
+/* .wrapper .container_B{
+    height:40vh;
+    width:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color:rgb(255, 184, 184);
+} */
+
+
+
+
+
+/* .container_A .mapSector{
+    height:97%;
+    width:97%;
+    overflow: hidden;
+    border-radius:10px;
+}
+.container_A .mapButtonSector{
+    height:10%;
+    width:100%;
+    display:flex;
+    justify-content: left;
+    align-items: center;
+    margin-left: 1%;
+    overflow: hidden;
+}
+
+.container_B .commentSector{
+    height:85%;
+    width:98%;
+    display: flex;
+    justify-content:center;
+    align-items:flex-start;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    overflow-x:hidden;
+    overflow-y:scroll;
+    background-color: rgba(255, 255, 255, 0.431);
+}
+.container_B .comment{
+    height:auto;
+    width:98%;
+    display: flex;
+    margin-top:1%;
+    padding-left: 2%;
+    font-weight: 700;
+    justify-content: left;
+    align-items: center;
+    font-size:2vh;
+    border-radius: 5px;
+    background-color:rgba(166, 253, 253, 0.459);
+}
+
+.container_B .messageSector{
+    height:10%;
+    width:98%;
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    flex-wrap: wrap;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+.container_B .text{
+    height:85%;
+    width:80%;
+    margin-left: 1%;
+    font-size:2vh;
+    border:none;
+    background-color: rgba(255, 255, 255, 0.438);
+}
+
+.container_B .sendButtonA{
+    height:75%;
+    width:15%;
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 2vh;
+    font-weight: 700;
+    color:rgba(248, 90, 164, 0.719);
+    background: radial-gradient(circle,#fffb01 65%,#ff5100e8);
+    border-radius: 5px;
+    transition: all 0.2s ease;
+    cursor:pointer;
+}
+.container_B .sendButtonA:hover{
+    color:rgba(255, 57, 149, 0.582);
+    background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
+    box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
+
+}
+.container_B .sendButtonA:active{
+    color:rgba(255, 57, 57, 0.719);
+    background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
+    box-shadow: 0 0 20px rgb(255, 251, 2) inset;
+}
+
+.mapButtonSector .buttonA{
+    height:50%;
+    width:15%;
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 2vh;
+    font-weight: 700;
+    color:rgba(248, 90, 164, 0.719);
+    background: radial-gradient(circle,#fffb01 65%,#ff5100e8);
+    border-radius: 50vh;
+    transition: all 0.2s ease;
+    cursor:pointer;
+}
+.mapButtonSector .buttonA:hover{
+    color:rgba(255, 57, 149, 0.582);
+    background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
+    box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
+
+}
+.mapButtonSector .buttonA:active{
+    color:rgba(255, 57, 57, 0.719);
+    background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
+    box-shadow: 0 0 20px rgb(255, 251, 2) inset;
+}
+.mapButtonSector .searchBox{
+    height:60%;
+    width:70%;
+    text-align: center;
+    font-size:2.2vh;
+    font-weight: 800;
+    color:#0c00b8;
+    margin-left:2%;
+    border-style: none;
+    background-color:rgba(255, 50, 176, 0.397);
+}
+.mapButtonSector .searchBox::placeholder{
+    color:rgba(255, 0, 0, 0.767);
+    font-weight:800;
+}
+ */
+
+
+
+
+/*横長*/
+/* @media (orientation: landscape){
+    :root{
+        --root-font-size:5vw;
+    }
+    .wrapper .container_A{
+        height:100vh;
+        width: 65%;;
+    }
+    .wrapper .container_B{
+        height:100vh;
+        width:35%;
+    }
+    .container_B .comment{
+        height:8%;
+        font-size:2vw;
+    }
+    .container_B .text{
+        font-size:2vw;
+        padding-left: 2%;
+    }
+    .mapButtonContainer .buttonA{
+        height:70%;
+        font-size: 3vw;
+    }
+    .mapButtonSector .searchBox{
+        font-size:2.2vw;
+    }
+
+} */
