@@ -11,6 +11,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/maps.js') }} " defer></script>
+    <script src="{{ asset('js/routes.js') }} " defer></script>
+
     <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBMKajpItMT-Hy-YgCTAvSO13Eefz2OVnY&libraries=places&callback=initMap" defer></script>
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
     <link href="{{ asset('css/test01.css') }}" rel="stylesheet">
@@ -26,6 +28,7 @@
             <div id="mapButtonSector" class="mapButtonSector">
                 <div id="mapButtonA" class="buttonA">共有</div>
                 <input type="text" class="searchBox" id="searchBox" placeholder="検    索">
+                <div id="nextButtonB" class="nextButtonB">戻る</div>
             </div>
         </div>
         <div class="container_B">
@@ -45,4 +48,5 @@
     <input type="hidden" id="latitude">
     <input type="hidden" id="longitude">
     <input type="hidden" id="zoom">
+    <form method="GET" id="nextActionB" action={{ route('route.viewRooms') }}></form>
 @endsection

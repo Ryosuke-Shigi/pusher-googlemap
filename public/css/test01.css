@@ -36,7 +36,7 @@
     height:10%;
     width:100%;
     display:flex;
-    justify-content: left;
+    justify-content: space-evenly;
     align-items: center;
     margin-left: 1%;
     overflow: hidden;
@@ -143,14 +143,40 @@
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
 }
+.mapButtonSector .nextButtonB{
+    height:50%;
+    width:15%;
+    border-radius:10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    font-size: 2vh;
+    font-weight: 700;
+    color:rgba(248, 90, 164, 0.719);
+    background: radial-gradient(circle,#01ffc0 65%,#0084ffe8);
+    border-radius: 50vh;
+    transition: all 0.2s ease;
+    cursor:pointer;
+}
+.mapButtonSector .nextButtonB:hover{
+    color:rgba(255, 57, 149, 0.582);
+    background: radial-gradient(circle,#90fdb4b0 50%,#fffb01b6,#0062ffb2);
+    box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
+
+}
+.mapButtonSector .nextButtonB:active{
+    color:rgba(255, 57, 57, 0.719);
+    background: radial-gradient(circle,#01ff4d 65%,#003cffe8);
+    box-shadow: 0 0 20px rgb(255, 251, 2) inset;
+}
 .mapButtonSector .searchBox{
     height:60%;
-    width:70%;
+    width:60%;
     text-align: center;
     font-size:2.2vh;
     font-weight: 800;
     color:#0c00b8;
-    margin-left:2%;
     border-style: none;
     background-color:rgba(255, 50, 176, 0.397);
 }
