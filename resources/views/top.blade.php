@@ -18,7 +18,7 @@
 @section('contents')
     <div class="wrapper">
         <div class="container_A">
-            <div class="nextButtonA" id="nextButtonA">簡易マップチャット</div>
+            <div class="nextButtonA" id="nextButtonA">簡易版<br>地図を見ながら<br>チャットができるやつ</div>
             <form method="GET" id="nextActionA" action="{{ route('route.viewRooms') }}"></form>
         </div>
     </dvi>
