@@ -47,7 +47,7 @@ window.Echo.channel('check').listen('checked',(e)=>{
 
 window.Echo.channel('comment').listen('commented',(e)=>{
     if($("#roomName").val()==e.roomName){
-        $("#commentSector").append('<div class="comment">'+e.name+" "+e.comment+'</div>');
+        $("#commentSector").append('<div class="comment">'+e.name+"："+e.comment+'</div>');
         let bar = document.getElementById('commentSector');
         bar.scrollTo(0,bar.scrollHeight);
     }
