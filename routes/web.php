@@ -30,8 +30,15 @@ Route::group(['prefix'=>'practice','as'=>'practice.'],function(){
 Route::group(['prefix'=>'route','as'=>'route.'],function(){
     Route::get('/viewRooms','routesController@viewRooms')->name('viewRooms');
     Route::post('/viewRooms','routesController@viewRooms')->name('viewRooms');
+    Route::get('/viewDelRooms','routesController@viewDelRooms')->name('viewDelRooms');
+    Route::post('/viewDelRooms','routesController@viewDelRooms')->name('viewDelRooms');
+
     Route::get('/login','routesController@login')->name('login');
     Route::get('/login','routesController@login')->name('login');
+
+    Route::get('/delRoom','routesController@delRoom')->name('delRoom');
+    Route::get('/delRoom','routesController@delRoom')->name('delRoom');
+
     Route::get('/roomCreate','routesController@roomCreate')->name('roomCreate');
     Route::get('/roomCreate','routesController@roomCreate')->name('roomCreate');
 
@@ -46,6 +53,9 @@ Route::group(['prefix'=>'check','as'=>'check.'],function(){
 
 Route::group(['prefix'=>'create','as'=>'create.'],function(){
     Route::get('room','createController@room')->name('room');
+
+    Route::get('breakRoom','createController@breakRoom')->name('breakRoom');
+
 });
 
 

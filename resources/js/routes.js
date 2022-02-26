@@ -17,9 +17,14 @@ $(function(){
     $('.nextButtonA').click(function(){
         $('#nextActionA').submit();
     });
-
+    $('.nextButtonB').click(function(){
+        $('#nextActionB').submit();
+    });
     $('.backButtonA').click(function(){
         $('#backActionA').submit();
+    });
+    $('.nextButtonC').click(function(){
+        $('#nextActionC').submit();
     });
 
 

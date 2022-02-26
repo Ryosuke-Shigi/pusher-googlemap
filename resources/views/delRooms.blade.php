@@ -2,7 +2,7 @@
 
 <!--タイトル-->
 @section('title')
-簡易MapChat
+タイトル
 @endsection
 
 <!--meta情報-->
@@ -10,7 +10,7 @@
     <!-- ajax用 -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/rooms.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/delRooms.css') }}" rel="stylesheet">
     <script src="{{ asset('js/app.js') }} " defer></script>
 
 @endsection
@@ -20,12 +20,11 @@
     <div class="wrapper">
         <div class="container_A">
             <div class="titleSection">
-                <div class="nextButtonC">作 成</div>
-                <div class="nextButtonB">削 除</div>
+                <div class="nextButtonB">戻 る</div>
             </div>
             <div class="topSection">
                 <div class="naviSector">
-                    ルームを選択してください
+                    削除選択
                 </div>
                 <div class="roomsSector">
                     @foreach($table as $key=>$data)
@@ -33,12 +32,11 @@
                     @endforeach
                 </div>
             </div>
-            <form method="GET" id="nextActionA" action="{{ route('route.login') }}" enctype="multipart/form-data">
+            <form method="GET" id="nextActionA" action="{{ route('route.delRoom') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="roomName" id="roomName">
             </form>
-            <form method="GET" id="nextActionB" action="{{ route('route.viewDelRooms') }}"></form>
-            <form method="GET" id="nextActionC" action="{{ route('route.roomCreate') }}"></form>
+            <form method="GET" id="nextActionB" action="{{ route('route.viewRooms') }}"></form>
         </div>
     </dvi>
 @endsection

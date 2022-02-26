@@ -27,4 +27,19 @@ class createController extends Controller
         }
         return redirect()->route('route.viewRooms');
     }
+
+    //ルーム削除
+    public function breakRoom(REQUEST $request){
+        $table=DB::table('rooms')
+                ->where('roomName','=',$request->roomName)
+                ->first();
+        //入力されたパスワードが異なれば前の画面へ戻る
+        if($table->pass != $request->pass){
+            return redirect()->route('delRoom',['roomName'=>$request->roomName]);
+        }else{
+            //パスワードが正しければ削除処理して削除ルーム選択画面へ
+            room::where('roomName','=',$request->roomName)->first()->delete();
+        }
+        return redirect()->route('route.viewDelRooms');
+    }
 }

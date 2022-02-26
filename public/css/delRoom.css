@@ -3,6 +3,14 @@
 :root{
     --root-font-size:5vh;
 }
+form{
+    height:100%;
+    width:100%;
+    display:flex;
+    justify-content: space-around;
+    align-content: space-around;
+    flex-wrap: wrap;
+}
 
 .wrapper .container_A{
     height:100vh;
@@ -12,19 +20,19 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    background: linear-gradient(180deg, rgb(255, 255, 140) 0%, rgba(255,255,140) 70%, rgb(255, 174, 198) 100%);
+    background: linear-gradient(180deg, rgb(88, 88, 88) 0%, rgb(255, 255, 255) 70%, rgb(255, 69, 69) 100%);
 }
 
 .container_A .titleSection{
     height:10%;
     width:80%;
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
     border-radius:10px;
-    background-color: rgba(255, 255, 255, 0.281);
+    background-color: rgba(255, 255, 255, 0.329);
 }
 .container_A .topSection{
     height:80%;
@@ -46,52 +54,72 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    font-size:3vh;
-    background-color: rgba(81, 255, 162, 0.555);
+    background-color: rgba(255, 81, 81, 0.555);
     border-radius:10px;
 }
-.topSection .roomsSector{
-    height:85%;
+.topSection .mainSector{
+    height:75%;
     width:95%;
     display:flex;
     justify-content: space-around;
-
+    align-content: space-around;
     flex-wrap: wrap;
-    background-color: rgba(81, 255, 162, 0.329);
+    background-color: rgba(255, 81, 81, 0.329);
     border-radius:10px;
-    overflow-x:hidden;
-    overflow-y:scroll;
 }
-.roomsSector .chatRoom{
-    height:25%;
-    width:90%;
-    margin-top:10px;
+.topSection .buttonSector{
+    height:10%;
+    width:95%;
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    background-color: rgba(255, 81, 81, 0.555);
+    border-radius:10px;
+}
+
+
+.mainSector .infoContentA{
+    width:80%;
+    height:30%;
+    margin-top:1%;
+    padding:1%;
     display:flex;
     justify-content: center;
     align-items: center;
     align-content: center;
-    text-align:center;
     flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.733);
+    overflow: hidden;
+    border-radius:10px;
+
+}
+
+.infoContentA .nameSpace{
+    width:100%;
+    text-align: center;
     font-size:3vh;
+    color:chocolate;
     font-weight: 700;
-    color:rgb(0, 0, 182);
-    background-color: rgba(81, 255, 162, 0.329);
-    border-radius:10px;
-    overflow:hidden;
-    transition:all 0.2s 0s ease;
-    cursor:pointer;
 }
-.roomsSector .chatRoom:hover{
-    background-color: rgba(81, 255, 96, 0.76);
+.infoContentA .inputSpace{
+    width:80%;
+    text-align: center;
+    font-size:2vh;
+    color:chocolate;
+    font-weight: 700;
 }
-.roomsSector .chatRoom:active{
-    background-color: rgba(255, 243, 81, 0.616);
+.inputSpace .text{
+    width:99%;
+    height:5vh;
+    font-size:2vh;
+    color:brown;
+    font-weight:700;
+    border:none;
 }
 
-
-
-
-.titleSection .nextButtonC{
+.buttonSector .nextButtonA{
     height:75%;
     width:35%;
     border-radius:10px;
@@ -107,47 +135,19 @@
     transition: all 0.2s ease;
     cursor:pointer;
 }
-.titleSection .nextButtonC:hover{
+.buttonSector .nextButtonA:hover{
     color:rgba(255, 57, 149, 0.582);
     background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
     box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
 
 }
-.titleSection .nextButtonC:active{
+.buttonSector .nextButtonA:active{
     color:rgba(255, 57, 57, 0.719);
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
 }
 
-.titleSection .nextButtonB{
-    height:75%;
-    width:35%;
-    border-radius:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    font-size: 2.5vh;
-    font-weight: 700;
-    color:rgba(0, 0, 0, 0.719);
-    background: radial-gradient(circle,#ff0101 65%,#000000e8);
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    cursor:pointer;
-}
-.titleSection .nextButtonB:hover{
-    color:rgba(255, 57, 149, 0.582);
-    background: radial-gradient(circle,#fd9090b0 50%,#000000b6,#ff0037b2);
-    box-shadow: 0 0 20px rgba(2, 19, 255, 0.514) inset;
-
-}
-.titleSection .nextButtonB:active{
-    color:rgba(255, 57, 57, 0.719);
-    background: radial-gradient(circle,#fd9090 50%,#000000,#ff0000e8);
-    box-shadow: 0 0 20px rgb(27, 2, 255) inset;
-}
-
-.titleSection .backButtonA{
+.buttonSector .backButtonA{
     height:75%;
     width:35%;
     border-radius:10px;
@@ -163,17 +163,18 @@
     transition: all 0.2s ease;
     cursor:pointer;
 }
-.titleSection .backButtonA:hover{
+.buttonSector .backButtonA:hover{
     color:rgba(255, 57, 149, 0.582);
     background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
     box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
 
 }
-.titleSection .backButtonA:active{
+.buttonSector .backButtonA:active{
     color:rgba(255, 57, 57, 0.719);
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
 }
+
 
 
 
@@ -335,18 +336,20 @@
     :root{
         --root-font-size:5vw;
     }
-    .titleSection .nextButtonA{
-        font-size:2.5vw
-    }
-    .titleSection .nextButtonB{
-        font-size:2vw
-    }
     .topSection .naviSector{
         font-size:2vw;
     }
-    .roomsSector .chatRoom{
-        height:40%;
-        width:70%;
+    .mainSector .infoContentA{
+        max-width:none;
+    }
+    .infoContentA .nameSpace{
         font-size:3vw;
     }
+    .infoContentA .inputSpace{
+        font-size:3vw;
+    }
+    .inputSpace .text{
+        font-size:3vw;
+    }
+
 }

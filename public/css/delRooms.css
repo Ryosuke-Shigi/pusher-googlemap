@@ -12,14 +12,14 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    background: linear-gradient(180deg, rgb(255, 255, 140) 0%, rgba(255,255,140) 70%, rgb(255, 174, 198) 100%);
+    background: linear-gradient(180deg, rgb(88, 88, 88) 0%, rgb(255, 255, 255) 70%, rgb(255, 69, 69) 100%);
 }
 
 .container_A .titleSection{
     height:10%;
     width:80%;
     display:flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
@@ -46,8 +46,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    font-size:3vh;
-    background-color: rgba(81, 255, 162, 0.555);
+    background-color: rgba(255, 174, 81, 0.555);
     border-radius:10px;
 }
 .topSection .roomsSector{
@@ -57,7 +56,7 @@
     justify-content: space-around;
 
     flex-wrap: wrap;
-    background-color: rgba(81, 255, 162, 0.329);
+    background-color: rgba(255, 188, 81, 0.329);
     border-radius:10px;
     overflow-x:hidden;
     overflow-y:scroll;
@@ -74,50 +73,21 @@
     flex-wrap: wrap;
     font-size:3vh;
     font-weight: 700;
-    color:rgb(0, 0, 182);
-    background-color: rgba(81, 255, 162, 0.329);
+    color:rgb(182, 0, 70);
+    background-color: rgba(255, 145, 81, 0.329);
     border-radius:10px;
     overflow:hidden;
     transition:all 0.2s 0s ease;
     cursor:pointer;
 }
 .roomsSector .chatRoom:hover{
-    background-color: rgba(81, 255, 96, 0.76);
+    background-color: rgba(255, 145, 81, 0.76);
 }
 .roomsSector .chatRoom:active{
-    background-color: rgba(255, 243, 81, 0.616);
+    background-color: rgba(255, 107, 81, 0.616);
 }
 
 
-
-
-.titleSection .nextButtonC{
-    height:75%;
-    width:35%;
-    border-radius:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    font-size: 2.5vh;
-    font-weight: 700;
-    color:rgba(248, 90, 164, 0.719);
-    background: radial-gradient(circle,#fffb01 65%,#ff5100e8);
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    cursor:pointer;
-}
-.titleSection .nextButtonC:hover{
-    color:rgba(255, 57, 149, 0.582);
-    background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
-    box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
-
-}
-.titleSection .nextButtonC:active{
-    color:rgba(255, 57, 57, 0.719);
-    background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
-    box-shadow: 0 0 20px rgb(255, 251, 2) inset;
-}
 
 .titleSection .nextButtonB{
     height:75%;
@@ -129,51 +99,24 @@
     color: #333;
     font-size: 2.5vh;
     font-weight: 700;
-    color:rgba(0, 0, 0, 0.719);
-    background: radial-gradient(circle,#ff0101 65%,#000000e8);
-    border-radius: 5px;
-    transition: all 0.2s ease;
-    cursor:pointer;
-}
-.titleSection .nextButtonB:hover{
-    color:rgba(255, 57, 149, 0.582);
-    background: radial-gradient(circle,#fd9090b0 50%,#000000b6,#ff0037b2);
-    box-shadow: 0 0 20px rgba(2, 19, 255, 0.514) inset;
-
-}
-.titleSection .nextButtonB:active{
-    color:rgba(255, 57, 57, 0.719);
-    background: radial-gradient(circle,#fd9090 50%,#000000,#ff0000e8);
-    box-shadow: 0 0 20px rgb(27, 2, 255) inset;
-}
-
-.titleSection .backButtonA{
-    height:75%;
-    width:35%;
-    border-radius:10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #333;
-    font-size: 2.5vh;
-    font-weight: 700;
     color:rgba(248, 90, 164, 0.719);
     background: radial-gradient(circle,#fffb01 65%,#ff5100e8);
     border-radius: 5px;
     transition: all 0.2s ease;
     cursor:pointer;
 }
-.titleSection .backButtonA:hover{
+.titleSection .nextButtonB:hover{
     color:rgba(255, 57, 149, 0.582);
     background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
     box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
 
 }
-.titleSection .backButtonA:active{
+.titleSection .nextButtonB:active{
     color:rgba(255, 57, 57, 0.719);
     background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
     box-shadow: 0 0 20px rgb(255, 251, 2) inset;
 }
+
 
 
 
@@ -335,11 +278,8 @@
     :root{
         --root-font-size:5vw;
     }
-    .titleSection .nextButtonA{
-        font-size:2.5vw
-    }
     .titleSection .nextButtonB{
-        font-size:2vw
+        font-size:2vw;
     }
     .topSection .naviSector{
         font-size:2vw;
