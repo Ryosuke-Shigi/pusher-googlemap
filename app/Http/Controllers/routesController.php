@@ -21,16 +21,16 @@ class routesController extends Controller
     }
     //ログイン画面表示
     public function login(REQUEST $request){
-        return view('login',['roomName'=>$request->roomName]);
+        return view('login',['roomName'=>$request->roomName,'error'=>$request->error]);
     }
     //ルーム削除承認画面表示
     public function delRoom(REQUEST $request){
-        return view('delRoom',['roomName'=>$request->roomName]);
+        return view('delRoom',['roomName'=>$request->roomName,'error'=>$request->error]);
     }
 
     //ルーム作成画面表示
     public function roomCreate(REQUEST $request){
-        return view('roomCreate');
+        return view('roomCreate',['error'=>$request->error]);
     }
 
 }

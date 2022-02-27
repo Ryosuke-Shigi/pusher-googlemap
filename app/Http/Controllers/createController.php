@@ -23,7 +23,8 @@ class createController extends Controller
             DB::commit();
         }catch(Exception $exception){
             DB::rollBack();
-            throw $exception;
+            //throw $exception;
+            return redirect()->route('route.roomCreate',['error'=>"error"]);
         }
         return redirect()->route('route.viewRooms');
     }
@@ -35,7 +36,7 @@ class createController extends Controller
                 ->first();
         //入力されたパスワードが異なれば前の画面へ戻る
         if($table->pass != $request->pass){
-            return redirect()->route('delRoom',['roomName'=>$request->roomName]);
+            return redirect()->route('route.delRoom',['roomName'=>$request->roomName,'error'=>"パスワードエラー"]);
         }else{
             //パスワードが正しければ削除処理して削除ルーム選択画面へ
             room::where('roomName','=',$request->roomName)->first()->delete();

@@ -23,7 +23,7 @@
             </div>
             <div class="topSection">
                 <div class="naviSector">
-                    {{ "ルーム：".$roomName }}
+                    {{ "ルーム：".$roomName }}@if(isset($error)) ：パスワードエラー @endif
                 </div>
                 <div class="mainSector">
                     <form method="GET" id="nextActionA" action="{{ route('check.viewer') }}" enctype="multipart/form-data">

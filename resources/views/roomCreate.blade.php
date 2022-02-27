@@ -23,7 +23,7 @@
             </div> --}}
             <div class="topSection">
                 <div class="naviSector">
-                    ルーム作成
+                    ルーム作成@if(isset($error))：ルーム名が重複しています@endif
                 </div>
                 <div class="mainSector">
                     <form method="GET" id="nextActionA" action="{{ route('create.room') }}" enctype="multipart/form-data">

@@ -24,12 +24,15 @@ class checkController extends Controller
                 ->first();
         //パスワードが正しいか判断
         if($pass->pass != $request->pass){
-            return redirect()->route('route.viewRooms');
+            return redirect()->route('route.login',["roomName"=>$request->roomName,"error"=>"パスワードエラー"]);
         }else{
+            event(new commented($request->roomName,$request->name,"が入りました"));
+
             $table=DB::table('comments')
             ->where('roomName','=',$request->roomName)
             ->get();
         }
+
         return view('test01',['table'=>$table,'roomName'=>$request->roomName,'name'=>$request->name]);
     }
 

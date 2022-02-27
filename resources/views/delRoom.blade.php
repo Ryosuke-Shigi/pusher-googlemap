@@ -23,7 +23,7 @@
             </div> --}}
             <div class="topSection">
                 <div class="naviSector">
-                    {{ "ルーム：".$roomName." を削除しますか？" }}
+                    {{ "ルーム：".$roomName." を削除しますか？" }}@if(isset($error))：：パスワードエラー：： @endif
                 </div>
                 <div class="mainSector">
                     <form method="GET" id="nextActionA" action="{{ route('create.breakRoom') }}" enctype="multipart/form-data">
