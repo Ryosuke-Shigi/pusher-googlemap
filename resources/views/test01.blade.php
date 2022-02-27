@@ -11,7 +11,6 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/maps.js') }} " defer></script>
-    <script src="{{ asset('js/routes.js') }} " defer></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?language=ja&region=JP&key=AIzaSyBMKajpItMT-Hy-YgCTAvSO13Eefz2OVnY&libraries=places&callback=initMap" defer></script>
     <link href="{{ asset('css/root.css') }}" rel="stylesheet">
