@@ -47,6 +47,7 @@ Route::group(['prefix'=>'route','as'=>'route.'],function(){
 Route::group(['prefix'=>'check','as'=>'check.'],function(){
     //チャット画面
     Route::get('/viewer','checkController@viewer')->name('viewer');
+    Route::post('/viewer','checkController@viewer')->name('viewer');
     Route::post('/checker','checkController@checker')->name('checker');
     Route::post('/commenter','checkController@commenter')->name('commenter');
 });

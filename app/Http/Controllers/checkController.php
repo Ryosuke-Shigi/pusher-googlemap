@@ -23,11 +23,10 @@ class checkController extends Controller
                 ->where('roomName','=',$request->roomName)
                 ->first();
         //パスワードが正しいか判断
-        if(($pass->pass != $request->pass) || (!isset($request->name))){
+        if($pass->pass != $request->pass || !isset($request->name)){
             return redirect()->route('route.login',["roomName"=>$request->roomName,"error"=>"エラー"]);
         }else{
             event(new commented($request->roomName,$request->name,"が入りました"));
-
             $table=DB::table('comments')
             ->where('roomName','=',$request->roomName)
             ->get();
