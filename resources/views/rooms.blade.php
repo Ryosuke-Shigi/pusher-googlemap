@@ -37,6 +37,7 @@
             <form method="GET" id="nextActionA" action="{{ route('route.login') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="roomName" id="roomName">
+                <input type="hidden" name="error" value="">
             </form>
             <form method="GET" id="nextActionB" action="{{ route('route.viewDelRooms') }}"></form>
             <form method="GET" id="nextActionC" action="{{ route('route.roomCreate') }}"></form>
