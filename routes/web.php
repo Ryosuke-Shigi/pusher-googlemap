@@ -56,6 +56,7 @@ Route::group(['prefix'=>'create','as'=>'create.'],function(){
     Route::get('room','createController@room')->name('room');
 
     Route::get('breakRoom','createController@breakRoom')->name('breakRoom');
+    Route::post('breakRoom','createController@breakRoom')->name('breakRoom');
 
 });
 

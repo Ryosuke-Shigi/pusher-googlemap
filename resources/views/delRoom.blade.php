@@ -26,7 +26,7 @@
                     {{ "ルーム：".$roomName." を削除しますか？" }}@if(isset($error))：：パスワードエラー：： @endif
                 </div>
                 <div class="mainSector">
-                    <form method="GET" id="nextActionA" action="{{ route('create.breakRoom') }}" enctype="multipart/form-data">
+                    <form method="POST" id="nextActionA" action="{{ route('create.breakRoom') }}" enctype="multipart/form-data">
                         @csrf
 
                         <div class="infoContentA">
@@ -36,6 +36,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="roomName" id="roomName" value={{ $roomName }}>
+                        <input type="hidden" name="error">
                     </form>
                 </div>
                 <div class="buttonSector">
