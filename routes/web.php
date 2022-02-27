@@ -34,13 +34,13 @@ Route::group(['prefix'=>'route','as'=>'route.'],function(){
     Route::post('/viewDelRooms','routesController@viewDelRooms')->name('viewDelRooms');
 
     Route::get('/login','routesController@login')->name('login');
-    Route::get('/login','routesController@login')->name('login');
+    Route::post('/login','routesController@login')->name('login');
 
     Route::get('/delRoom','routesController@delRoom')->name('delRoom');
-    Route::get('/delRoom','routesController@delRoom')->name('delRoom');
+    Route::post('/delRoom','routesController@delRoom')->name('delRoom');
 
     Route::get('/roomCreate','routesController@roomCreate')->name('roomCreate');
-    Route::get('/roomCreate','routesController@roomCreate')->name('roomCreate');
+    Route::post('/roomCreate','routesController@roomCreate')->name('roomCreate');
 
 });
 
