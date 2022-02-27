@@ -21,7 +21,7 @@
         <div class="container_A">
             <div class="titleSection">
                 <div class="nextButtonC">作 成</div>
-                <div class="backButtonA">戻 る</div>
+                <div class="backButtonA">ＴＯＰ</div>
                 <div class="nextButtonB">削 除</div>
             </div>
             <div class="topSection">
