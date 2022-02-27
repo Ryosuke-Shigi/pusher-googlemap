@@ -46,7 +46,7 @@
     align-items: center;
     align-content: center;
     flex-wrap: wrap;
-    font-size:3vh;
+    font-size:2.5vh;
     background-color: rgba(81, 255, 162, 0.555);
     border-radius:10px;
 }
@@ -93,7 +93,7 @@
 
 .titleSection .nextButtonC{
     height:75%;
-    width:35%;
+    width:30%;
     border-radius:10px;
     display: flex;
     justify-content: center;
@@ -121,7 +121,7 @@
 
 .titleSection .nextButtonB{
     height:75%;
-    width:35%;
+    width:30%;
     border-radius:10px;
     display: flex;
     justify-content: center;
@@ -148,31 +148,31 @@
 }
 
 .titleSection .backButtonA{
-    height:75%;
-    width:35%;
+    height:60%;
+    width:20%;
     border-radius:10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #333;
+    color: rgb(255, 255, 255);
     font-size: 2.5vh;
     font-weight: 700;
     color:rgba(248, 90, 164, 0.719);
-    background: radial-gradient(circle,#fffb01 65%,#ff5100e8);
+    background: radial-gradient(circle,#01ffff 65%,#0004ffe8);
     border-radius: 5px;
     transition: all 0.2s ease;
     cursor:pointer;
 }
 .titleSection .backButtonA:hover{
     color:rgba(255, 57, 149, 0.582);
-    background: radial-gradient(circle,#fdc190b0 50%,#ffe601b6,#ff00aab2);
+    background: radial-gradient(circle,#01ffffa8 65%,#0004ff94);
     box-shadow: 0 0 20px rgba(255, 251, 2, 0.514) inset;
 
 }
 .titleSection .backButtonA:active{
     color:rgba(255, 57, 57, 0.719);
-    background: radial-gradient(circle,#fdc190 50%,#ffe601,#ff00aae8);
-    box-shadow: 0 0 20px rgb(255, 251, 2) inset;
+    background: radial-gradient(circle,#0184ff 65%,#00e1ff);
+    box-shadow: 0 0 10px rgb(255, 2, 2) inset;
 }
 
 

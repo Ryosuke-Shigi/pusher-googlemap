@@ -21,6 +21,7 @@
         <div class="container_A">
             <div class="titleSection">
                 <div class="nextButtonC">作 成</div>
+                <div class="backButtonA">戻 る</div>
                 <div class="nextButtonB">削 除</div>
             </div>
             <div class="topSection">
@@ -39,6 +40,7 @@
             </form>
             <form method="GET" id="nextActionB" action="{{ route('route.viewDelRooms') }}"></form>
             <form method="GET" id="nextActionC" action="{{ route('route.roomCreate') }}"></form>
+            <form method="GET" id="backActionA" action="{{ route("top") }}"></form>
         </div>
     </dvi>
 @endsection
