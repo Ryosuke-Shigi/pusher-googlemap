@@ -41,6 +41,7 @@
                             </div>
                         </div>
                         <input type="hidden" name="roomName" id="roomName" value={{ $roomName }}>
+                        <input type="hidden" name="error">
                     </form>
                 </div>
                 <div class="buttonSector">
