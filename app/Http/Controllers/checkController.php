@@ -24,7 +24,7 @@ class checkController extends Controller
                 ->first();
 
         //パスワードが正しいか判断
-        if($pass->pass!=$request->pass || !isset($request->name)){
+        if($pass->pass!=$request->pass){
             return redirect()->route('route.login',["roomName"=>$request->roomName,"error"=>$request->error]);
         }else{
             event(new commented($request->roomName,$request->name,"が入りました"));
