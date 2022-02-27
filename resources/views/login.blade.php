@@ -26,7 +26,7 @@
                     {{ "ルーム：".$roomName }}@if(isset($error)) ：名前orパスワードエラー @endif
                 </div>
                 <div class="mainSector">
-                    <form method="POST" id="nextActionA" action="{{ route('check.viewer') }}" enctype="multipart/form-data">
+                    <form method="get" id="nextActionA" action="{{ route('check.viewer') }}" enctype="multipart/form-data">
                         @csrf
                         <div class="infoContentA">
                             <div class="nameSpace">名　前</div>
@@ -41,7 +41,6 @@
                             </div>
                         </div>
                         <input type="hidden" name="roomName" id="roomName" value={{ $roomName }}>
-                        <input type="hidden" name="error">
                     </form>
                 </div>
                 <div class="buttonSector">
