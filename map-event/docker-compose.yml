@@ -8,7 +8,7 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ../:/work/laravel
-    restart: always
+    #restart: always
 
   web:
     build: ./nginx
@@ -17,7 +17,7 @@ services:
     volumes:
       - php-fpm-socket:/var/run/php-fpm
       - ../:/work/laravel
-    restart: always
+    #restart: always
 
   db:
     build: ./mysql
@@ -25,7 +25,7 @@ services:
       - db-store:/var/lib/mysql
     ports:
       - 3320:3306
-    restart: always
+    #restart: always
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
@@ -40,4 +40,4 @@ services:
       - "8086:80"
     volumes:
       - ./phpmyadmin/sessions:/sessions
-    restart: always
+    #restart: always
