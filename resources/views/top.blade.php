@@ -2,7 +2,7 @@
 
 <!--タイトル-->
 @section('title')
-簡易MAPチャット
+MAPチャット
 @endsection
 
 <!--meta情報-->

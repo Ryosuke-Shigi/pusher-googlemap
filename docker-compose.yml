@@ -4,27 +4,23 @@ volumes:
   php-fpm-socket:
 services:
   app:
-    build: ./php
+    build: ./map-event/php
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ../:/work/laravel
+      - ./:/work/laravel
     #restart: always
 
   web:
-    build: ./nginx
-    ports:
-      - 8085:80
+    build: ./map-event/nginx
     volumes:
       - php-fpm-socket:/var/run/php-fpm
-      - ../:/work/laravel
+      - ./:/work/laravel
     #restart: always
 
   db:
-    build: ./mysql
+    build: ./map-event/mysql
     volumes:
       - db-store:/var/lib/mysql
-    ports:
-      - 3320:3306
     #restart: always
 
   phpmyadmin:
@@ -36,8 +32,6 @@ services:
       - PMA_HOSTS=db
       - PMA_USER=admin
       - PMA_PASSWORD=pass
-    ports:
-      - "8086:80"
     volumes:
-      - ./phpmyadmin/sessions:/sessions
+      - ./map-event/phpmyadmin/sessions:/sessions
     #restart: always
